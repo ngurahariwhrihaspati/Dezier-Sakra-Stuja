@@ -1,138 +1,147 @@
-/* Menu Wrapper Container */
+/* Burger Menu Button */
 .menu-wrapper {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 200;
+  position: relative;
+  z-index: 1000;
 }
 
-/* Burger Menu Button */
 .burger-menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border: none;
-    color: white;
-    font-size: 28px;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 200;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1010;
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1),
+    background 0.28s ease,
+    padding 0.28s ease,
+    box-shadow 0.28s ease,
+    border-radius 0.28s ease;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .burger-menu:hover {
-    background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.burger-menu.active {
+  /* Rotate only; keep the button in place and same size */
+  transform: rotate(90deg);
+  padding: 10px 15px;
 }
 
 /* Overlay Menu - Customizable Positioning */
 .overlay-menu {
-    position: fixed;
-    width: 200px;
-    background: rgba(0, 0, 0, 0.95);
-    padding: 60px 0 30px 0;
-    z-index: 150;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    max-height: 100vh;
-    overflow-y: auto;
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  position: fixed;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 60px 0 30px 0;
+  z-index: 100;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  max-height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .overlay-menu.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Menu Position Variants */
 .menu-left {
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .menu-right {
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .menu-top {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: auto;
-    flex-direction: row;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  flex-direction: row;
 }
 
 .menu-bottom {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: auto;
-    flex-direction: row;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  flex-direction: row;
 }
 
 .overlay-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .overlay-menu li {
-    margin: 0;
+  margin: 0;
 }
 
 .menu-top-right {
-    top: 0;
-    right: 0;
-    transform: none;
-    width: 200px;
-    height: auto;
+  top: 0;
+  right: 0;
+  transform: none;
+  width: 200px;
+  height: auto;
 }
 
 .menu-top-right ul {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .overlay-menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px 25px;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    border-left: 3px solid transparent;
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 25px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  border-left: 3px solid transparent;
 }
 
 .overlay-menu a:hover {
-    background: rgba(232, 73, 29, 0.7);
-    border-left-color: #e8491d;
-    padding-left: 35px;
+  background: rgba(232, 73, 29, 0.7);
+  border-left-color: #e8491d;
+  padding-left: 35px;
 }
 
 /* Responsive Menu */
 @media (max-width: 768px) {
-    .overlay-menu {
-        width: 150px;
-    }
+  .overlay-menu {
+    width: 150px;
+  }
 
-    .overlay-menu a {
-        padding: 12px 15px;
-        font-size: 12px;
-    }
+  .overlay-menu a {
+    padding: 12px 15px;
+    font-size: 12px;
+  }
 
-    .overlay-menu a:hover {
-        padding-left: 20px;
-    }
+  .overlay-menu a:hover {
+    padding-left: 20px;
+  }
 }
