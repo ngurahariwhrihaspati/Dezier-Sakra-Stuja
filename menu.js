@@ -46,3 +46,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedPosition = localStorage.getItem("menuPosition") || "top-right";
   setMenuPosition(savedPosition);
 });
+
+// Swipe functionality for mobile devices
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.getElementById("myCarousel");
+  let startX = 0;
+  const minDistance = 50;
+
+  carousel.addEventListener("touchstart", function (e) {
+    startX = e.changedTouches[0].clientX;
+  });
+
+  carousel.addEventListener("touchend", function (e) {
+    const endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+
+    if (Math.abs(dx) > minDistance) {
+      if (dx < 0) {
+        $("#myCarousel").carousel("next");
+      } else {
+        $("#myCarousel").carousel("prev");
+      }
+    }
+  });
+});
