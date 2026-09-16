@@ -44,6 +44,7 @@ Dezier-Sakra-Stuja/
 ├── menu.js           # Menu and carousel interaction logic
 ├── projectA/         # Project folder A
 ├── projectB/         # Project folder B
+├── LICENSE           # Unlicense (public domain)
 └── README.md         # This file
 ```
 
@@ -90,9 +91,13 @@ View the live prototype: [Dezier Sakra Stuja](https://ngurahariwhrihaspati.githu
 
 ## 📄 License
 
-Not specified - Please add a license if you plan to share this publicly.
+This project is released into the **public domain** under the [Unlicense](LICENSE).
+
+This is free and unencumbered software released into the public domain. Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software for any purpose, commercial or non-commercial, and by any means.
+
+For more information, see the [LICENSE](LICENSE) file or visit [unlicense.org](http://unlicense.org/).
 
 ---
 
 **Author:** ngurahariwhrihaspati  
-**Last Updated:** May 2026
+**Last Updated:** September 2026
